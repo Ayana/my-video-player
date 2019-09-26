@@ -3,9 +3,30 @@ import SearchBar from './SearchBar'
 import VideoList from './VideoList'
 import VideoDetail from './VideoDetail'
 import youtube from '../apis/youtube'
+import styled from "styled-components"
+
+const AppStyle = styled.div`
+  @media (min-width: 800px) {
+    .row {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 1em;
+      .eleven {
+        width: 68%;
+      }
+      .five {
+        width: 30%;
+      }
+    }
+  }
+`
 
 class App extends React.Component {
   state = { videos: [], selectedVideo: null }
+
+  componentDidMount() {
+    this.onTermSubmit('cooking')
+  }
 
   onTermSubmit = async term => {
     const response = await youtube.get('/search', {
@@ -26,13 +47,13 @@ class App extends React.Component {
 
   render() { 
     return (
-      <div className="ui container">
-        <SearchBar onFormSubmit={this.onTermSubmit} />
-        I have {this.state.videos.length} videos.
-        <div class="ui hidden divider"></div>
+      <AppStyle>
+        <div className="ui container">
+          <SearchBar onFormSubmit={this.onTermSubmit} />
+          I have {this.state.videos.length} videos.
+          <div class="ui hidden divider"></div>
 
-        <div className="ui grid">
-          <div className="ui row">
+          <div className="row">
             <div className="eleven wide column">
               <VideoDetail video={this.state.selectedVideo}/>
             </div>
@@ -44,7 +65,7 @@ class App extends React.Component {
             </div>
           </div>
         </div>
-      </div>
+      </AppStyle>
     );
   }
 }

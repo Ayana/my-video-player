@@ -24,6 +24,7 @@ const VideoDetail = ({ video }) => {
 				</a>
 				<p>{video.snippet.description}</p>
 			</div>
+			<div class="ui hidden divider"></div>
 		</div>
 	)
 }

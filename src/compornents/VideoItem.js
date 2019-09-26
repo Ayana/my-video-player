@@ -13,6 +13,7 @@ const ItemStyle = styled.div`
 		}
 		.image {
 			width: 35%;
+			height: auto;
 		}
 		.content {
 			width: 63%;
