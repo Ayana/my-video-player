@@ -1,17 +1,15 @@
 import React from "react"
 
-const VideoItem = ({ video }) => {
-	const youtubeUrl = 'https://www.youtube.com/watch?v='
+const VideoItem = ({ video, onVideoSelect }) => {
 
 	return (
-		<div className="item">
-			<a className="ui image" href={youtubeUrl + video.id.videoId}>
-				<img 
-					src={video.snippet.thumbnails.medium.url} 
-				/>
-			</a>
+		<div onClick={() => onVideoSelect(video)} className="item">
+			<img 
+				className="ui image"
+				src={video.snippet.thumbnails.medium.url} 
+			/>
 			<div className="content">
-				<a href={youtubeUrl + video.id.videoId}>{video.snippet.title}</a>
+				{video.snippet.title}
 				<div className="description">
 					{video.snippet.description}
 				</div>
