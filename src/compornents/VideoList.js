@@ -13,9 +13,7 @@ const VideoList = ({ videos, onVideoSelect }) => {
 	})
 
 	return (
-		<div className="ui items">
-			I have {videos.length} videos.
-			<div class="ui hidden divider"></div>
+		<div className="ui list">
 			{renderdList}
 		</div>
 	)

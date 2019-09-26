@@ -1,11 +1,10 @@
 import React from "react"
 
 const VideoDetail = ({ video }) => {
-
 	if (!video) {
 		return (
 			<div>
-				Search Video
+				
 			</div>
 		)
 	}
@@ -15,11 +14,11 @@ const VideoDetail = ({ video }) => {
 
 	return(
 		<div>
-			<div className="ui segment">
-				<div className="ui embed">
-					<iframe src={videoSrc} />
-				</div>
-				<div class="ui hidden divider"></div>
+			<div className="ui embed">
+				<iframe src={videoSrc} />
+			</div>
+			<div class="ui hidden divider"></div>
+			<div>
 				<a href={videoSrc}>
 					<h4 className="ui header">{video.snippet.title}</h4>
 				</a>
