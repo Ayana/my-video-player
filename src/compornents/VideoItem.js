@@ -5,10 +5,11 @@ const VideoItem = ({ video }) => {
 
 	return (
 		<div className="item">
-			<img 
-				className="ui image"
-				src={video.snippet.thumbnails.medium.url} 
-			/>
+			<a className="ui image" href={youtubeUrl + video.id.videoId}>
+				<img 
+					src={video.snippet.thumbnails.medium.url} 
+				/>
+			</a>
 			<div className="content">
 				<a href={youtubeUrl + video.id.videoId}>{video.snippet.title}</a>
 				<div className="description">
