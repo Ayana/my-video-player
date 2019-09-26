@@ -7,8 +7,9 @@ const VideoList = ({ videos }) => {
 	})
 
 	return (
-		<div className="ui relaxed list">
+		<div className="ui items">
 			I have {videos.length} videos.
+			<div class="ui hidden divider"></div>
 			{renderdList}
 		</div>
 	)
